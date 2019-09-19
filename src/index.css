@@ -1,0 +1,62 @@
+#root {
+    /**/
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Cuprum';
+    src: local('Cuprum'), url(/fonts/cuprum_latin.woff2) format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Cuprum';
+    src: local('Cuprum'), url(/fonts/cuprum_cyrillic.woff2) format('woff2');
+}
+
+:root {
+    --сuprum-font-family: 'Cuprum', sans-serif;
+}
+
+/*reset*/
+html {
+    scrollbar-color: grey black;
+    scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar {
+    background-color: black;
+    width:6px
+}
+
+html::-webkit-scrollbar-track {
+    background-color: black
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: grey;
+}
+
+body {
+    margin: 0;
+}
+
+html, body {
+    background-color: #FFFFFF;
+    font-family: var(--сuprum-font-family);
+    font-size: 16px;
+    color: grey;
+}
+
+input, button, select, optgroup, textarea {
+    margin: 0;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+/*reset*/
