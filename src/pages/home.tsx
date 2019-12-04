@@ -48,7 +48,7 @@ const Posts = () => {
     // }
 
     const getPost = (post) => {
-        return post ? post.url_o : ''
+        return post ? post.url_l : ''
     }
 
     const getRandomInt = (min, max) => {
@@ -62,7 +62,7 @@ const Posts = () => {
             <div id="top-bar" className="top-bar">
                 <Menu />
             </div>
-            <div className="feed-block-background" style={{backgroundImage: 'url(' + getPost(posts[getRandomInt(0, 2)]) + ')', opacity: posts.length == 0 ? 0 : 1}}></div>
+            <div className="feed-block-background" style={{backgroundImage: 'url(' + getPost(posts[getRandomInt(0, posts.length - 1)]) + ')', opacity: posts.length == 0 ? 0 : 1}}></div>
             <div className="feed-block">
                 <p className="feed-block-t">БАЗА РЕАБИЛИТАЦИИ ЖИВОТНЫХ</p>
                 <p>цели</p>

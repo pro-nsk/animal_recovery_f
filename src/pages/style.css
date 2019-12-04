@@ -55,7 +55,7 @@
 }
 
 #menu-title {
-    margin-left: 30px;
+    margin: 0 30px 0 30px;
     font-size: 30px;
 }
 
@@ -111,6 +111,7 @@
     height: 100vh;
     background-blend-mode: screen;
     background-size: cover;
+    background-position: center;
     background-color: grey;
     transition: opacity 1s ease-in-out;
 }
@@ -118,4 +119,14 @@
 .feed-block-t {
     font-size: 50px;
     text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    #menu-title {
+        margin: 0 5px 0 5px;
+        font-size: 20px;
+    }
+    .feed-block {
+        padding: 100px 10px;
+    }
 }
