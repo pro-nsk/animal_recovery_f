@@ -23,6 +23,10 @@ class Api extends BaseApi {
         return this.sendRequest('/post/' + id)
     }
 
+    async getPhotos(): Promise<any> {
+        return this.sendRequest('https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=9c2f9a8ed41199c726ef14607079721e&user_id=185879434@N08&extras=url_o&per_page=10&page=1&format=json&nojsoncallback=1')
+    }
+
     async postByUrlName(urlName: string): Promise<Post> {
         return this.sendRequest('/' + urlName)
     }
@@ -128,7 +132,7 @@ class Api extends BaseApi {
 
     private async sendRequest(url: string): Promise<any> {
         try {
-            let response = await this.fetch(configuration.basePath + url, {method: 'GET'})
+            let response = await this.fetch(/*configuration.basePath + */url, {method: 'GET'})
             let json = await response.json()
             return Promise.resolve(json)
         } catch (error) {

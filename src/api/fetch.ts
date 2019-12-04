@@ -6,7 +6,7 @@ export function fetch(input: RequestInfo, init?: RequestInit): Promise<Response>
     init = init || {}
     init = {
         ...init,
-        credentials: 'include',
+        // credentials: 'include',
         headers: {
             ...init.headers
         }
