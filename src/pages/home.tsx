@@ -26,7 +26,7 @@ class Posts extends Component<AppProps> {
     async loadData() {
         let posts = await api.getPhotos()
         let ready = true
-        this.setState({posts: posts.photos.photo, ready})
+        this.setState({posts: posts.photoset.photo, ready})
     }
 
 
