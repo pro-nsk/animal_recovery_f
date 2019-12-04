@@ -1,92 +1,76 @@
 import * as React from 'react'
-import {Component} from 'react'
+import {useEffect, useState} from 'react'
 import {api} from '../api/api'
 import Menu from '../components/menu'
-import AppProps from '../util/appProps'
-import {backToTop, SITE_NAME} from '../util/util'
+import {SITE_NAME} from '../util/util'
 import Loading from './loading'
 import './style.css'
 
-const PAGE_SIZE = 10
+const Posts = () => {
 
-class Posts extends Component<AppProps> {
+    const [posts, setPosts] = useState([])
+    const [ready, setReady] = useState(true)
 
-    state = {
-        posts: [],
-        menu: [],
-        pageNumber: 0,
-        ready: true
-    }
-
-    componentDidMount() {
-        document.title = SITE_NAME
-        this.loadData()
-    }
-
-    async loadData() {
+    const loadData = async () => {
         let posts = await api.getPhotos()
         let ready = true
-        this.setState({posts: posts.photoset.photo, ready})
+        setPosts(posts.photoset.photo)
+        setReady(ready)
     }
 
+    useEffect(() => {
+        document.title = SITE_NAME
+        loadData()
+    }, [])
 
+    
 
-    next = () => {
-        this.loadPage(this.state.pageNumber + 1)
-        backToTop()
-    }
+    // resetHome() {
+    //     this.loadPage(0)
+    //     backToTop()
+    // }
 
-    prev = () => {
-        this.loadPage(this.state.pageNumber - 1)
-        backToTop()
-    }
+    // isFirst() {
+    //     return this.state.pageNumber == 0
+    // }
 
-    resetHome() {
-        this.loadPage(0)
-        backToTop()
-    }
+    // isLast() {
+    //     return this.state.posts.length < PAGE_SIZE
+    // }
 
-    isFirst() {
-        return this.state.pageNumber == 0
-    }
+    // loadPage(pageNumber: number) {
+    //     this.setState({pageNumber, ready: false}, () => this.loadData())
+    // }
 
-    isLast() {
-        return this.state.posts.length < PAGE_SIZE
-    }
+    // deletePost = async (id) => {
+    //     let ok = await api.delete(id)
+    //     ok && this.loadData()
+    // }
 
-    loadPage(pageNumber: number) {
-        this.setState({pageNumber, ready: false}, () => this.loadData())
-    }
-
-    deletePost = async (id) => {
-        let ok = await api.delete(id)
-        ok && this.loadData()
-    }
-
-    getPost(post) {
+    const getPost = (post) => {
         return post ? post.url_o : ''
     }
 
-    getRandomInt(min, max) {
+    const getRandomInt = (min, max) => {
         return Math.floor(Math.random() * (max - min + 1)) + min
     }
 
-    render() {
 
-        return this.state.ready ? (
-            <div className="home">
-                <div id="top-bar" className="top-bar">
-                    <Menu />
-                </div>
-                <div className="feed-block-background" style={{backgroundImage: 'url(' + this.getPost(this.state.posts[this.getRandomInt(0, 2)]) + ')', opacity: this.state.posts.length == 0 ? 0 : 1}}></div>
-                <div className="feed-block">
-                    <p className="feed-block-t">БАЗА РЕАБИЛИТАЦИИ ЖИВОТНЫХ</p>
-                    <p>цели</p>
-                    <p>задачи</p>
-                </div>
+
+    return ready ? (
+        <div className="home">
+            <div id="top-bar" className="top-bar">
+                <Menu />
             </div>
-        ) : <Loading />
-    }
+            <div className="feed-block-background" style={{backgroundImage: 'url(' + getPost(posts[getRandomInt(0, 2)]) + ')', opacity: posts.length == 0 ? 0 : 1}}></div>
+            <div className="feed-block">
+                <p className="feed-block-t">БАЗА РЕАБИЛИТАЦИИ ЖИВОТНЫХ</p>
+                <p>цели</p>
+                <p>задачи</p>
+            </div>
+        </div>
+    ) : <Loading />
+
 }
 
 export default Posts
