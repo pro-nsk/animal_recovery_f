@@ -1,10 +1,11 @@
 import * as React from 'react'
 import {useEffect, useState} from 'react'
 import {api} from '../api/api'
-import Menu from '../components/menu'
+import TopBar from '../components/menu'
 import {SITE_NAME} from '../util/util'
 import Loading from './loading'
 import './style.css'
+import Footer from '../components/footer'
 
 const Posts = () => {
 
@@ -23,7 +24,7 @@ const Posts = () => {
         loadData()
     }, [])
 
-    
+
 
     // resetHome() {
     //     this.loadPage(0)
@@ -59,15 +60,14 @@ const Posts = () => {
 
     return ready ? (
         <div className="home">
-            <div id="top-bar" className="top-bar">
-                <Menu />
-            </div>
+            <TopBar />
             <div className="feed-block-background" style={{backgroundImage: 'url(' + getPost(posts[getRandomInt(0, posts.length - 1)]) + ')', opacity: posts.length == 0 ? 0 : 1}}></div>
             <div className="feed-block">
                 <p className="feed-block-t">БАЗА РЕАБИЛИТАЦИИ ЖИВОТНЫХ</p>
                 <p>цели</p>
                 <p>задачи</p>
             </div>
+            <Footer />
         </div>
     ) : <Loading />
 

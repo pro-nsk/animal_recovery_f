@@ -1,14 +1,10 @@
 import * as React from 'react'
-import { Component } from 'react'
-import { api } from '../api/api'
+import {Component} from 'react'
+import {api} from '../api/api'
 import '../pages/style.css'
 import AppProps from '../util/appProps'
 
-interface MenuProps {
-    // gotoFunc: (url) => void
-}
-
-class Menu extends Component<AppProps & MenuProps> {
+class TopBar extends Component<AppProps> {
 
     state = {
         menu: []
@@ -42,13 +38,15 @@ class Menu extends Component<AppProps & MenuProps> {
 
     render() {
         return (
-            <div id="menu">
-                <span id="menu-logo" ><img src={'/images/logo.jpg'}/></span>
-                <span id="menu-title" >База Реабилитации Животных НСО Кольцово</span>
-                <span id="menu-requisites" >реквизиты</span>
+            <div id="top-bar" className="top-bar">
+                <div id="menu">
+                    <span id="menu-logo" ><img src="/images/logo.jpg" /></span>
+                    <span id="menu-title" >База Реабилитации Животных НСО&nbsp;Кольцово</span>
+                    <span id="menu-requisites" >реквизиты:</span>
+                </div>
             </div>
         )
     }
 }
 
-export default Menu
+export default TopBar

@@ -4,33 +4,34 @@
 
 @font-face {
     font-display: swap;
-    font-family: 'Cuprum';
-    src: local('Cuprum'), url(/fonts/cuprum_latin.woff2) format('woff2');
+    font-family: 'Ubuntu';
+    font-weight: 400;
+    src: local('Ubuntu'), url(/fonts/ubuntu_cyrillic_latin_regular.woff2) format('woff2');
 }
-
 @font-face {
     font-display: swap;
-    font-family: 'Cuprum';
-    src: local('Cuprum'), url(/fonts/cuprum_cyrillic.woff2) format('woff2');
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    src: local('Ubuntu'), url(/fonts/ubuntu_cyrillic_latin_medium.woff2) format('woff2');
 }
 
 :root {
-    --сuprum-font-family: 'Cuprum', sans-serif;
+    --ubuntu-font-family: 'Ubuntu', sans-serif;
 }
 
 /*reset*/
 html {
-    scrollbar-color: grey black;
+    scrollbar-color: grey white;
     scrollbar-width: thin;
 }
 
 html::-webkit-scrollbar {
-    background-color: black;
+    background-color: white;
     width:6px
 }
 
 html::-webkit-scrollbar-track {
-    background-color: black
+    background-color: white
 }
 
 html::-webkit-scrollbar-thumb {
@@ -43,9 +44,9 @@ body {
 
 html, body {
     background-color: #FFFFFF;
-    font-family: var(--сuprum-font-family);
+    font-family: var(--ubuntu-font-family);
     font-size: 16px;
-    color: grey;
+    color: black;
 }
 
 input, button, select, optgroup, textarea {
