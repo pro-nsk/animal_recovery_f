@@ -41,8 +41,19 @@ class TopBar extends Component<AppProps> {
             <div id="top-bar" className="top-bar">
                 <div id="menu">
                     <span id="menu-logo" ><img src="/images/logo.jpg" /></span>
-                    <span id="menu-title" >База Реабилитации Животных НСО&nbsp;Кольцово</span>
-                    <span id="menu-requisites" >реквизиты:</span>
+                    <span id="menu-title" >
+                        <input id="menu-toggle" type="checkbox" />
+                        <label className="menu-btn" htmlFor="menu-toggle">
+                            <span id="menu-toggle-s" />
+                        </label>
+                        <div className="t">База Реабилитации Животных НСО&nbsp;Кольцово</div>
+                        <div className="paragraphs">
+                            <span id="about" >О Нас</span>
+                            <span id="operations" >Операционный День</span>
+                            <span id="partners" >Партнёры</span>
+                            <span id="menu-requisites" >Реквизиты</span>
+                        </div>
+                    </span>
                 </div>
             </div>
         )
