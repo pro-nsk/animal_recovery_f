@@ -17,12 +17,26 @@ export function isEnter(e) {
 export const SITE_NAME = 'База Реабилитации Животных НСО Кольцово'
 
 export function stripHtml(html) {
-    var tempDiv = document.createElement('div')
+    const tempDiv = document.createElement('div')
     tempDiv.innerHTML = html
     return tempDiv.textContent || tempDiv.innerText || ''
 }
 
 export function backToTop() {
-    let navBar = document.getElementById('top-bar')
+    const navBar = document.getElementById('top-bar')
     navBar && navBar.scrollIntoView()
+}
+
+export enum Paragraphs {
+    about = 'about',
+    operations = 'operations',
+    partners = 'partners',
+    menuRequisites = 'menu-requisites'
+}
+
+export function goToElementId(elementId) {
+    const targetElement = document.getElementById(elementId)
+    if (targetElement) {
+        targetElement.scrollIntoView({behavior: 'smooth', block: 'center'})
+    }
 }

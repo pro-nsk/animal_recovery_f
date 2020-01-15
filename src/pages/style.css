@@ -49,7 +49,8 @@
     border-radius: 5px;
     padding: 5px;
 }
-.paragraphs > span:hover {
+.paragraphs > span:hover,
+.p-h-span {
     background-image: linear-gradient(90deg, #009fe0, #e31e25);
     color: white;
 }
@@ -91,7 +92,8 @@
 .feed-block {
     color: black;
 }
-.about-p-background {
+.about-p-background,
+.partners-p-background {
     position: absolute;
     width: 100%;
     height: 100vh;
@@ -188,18 +190,21 @@
     opacity: 1;
 }
 
-.about-p {
+.about-p,
+.partners-p {
     position: relative;
 }
 
 .about-p,
-.operations-p {
+.operations-p,
+.partners-p {
     display: flex;
     align-items: center;
     height: 100vh;
 }
 .about-p div,
-.operations-p div {
+.operations-p div,
+.partners-p div {
     background-color:rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     width: 50%;
@@ -390,7 +395,8 @@
     .feed-block {
         padding: 0 130px;
     }
-    .about-p-background {
+    .about-p-background,
+    .partners-p-background {
         margin-left: -130px;
     }
     .footer {
