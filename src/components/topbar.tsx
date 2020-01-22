@@ -26,7 +26,7 @@ const TopBar = () => {
                         <span className={getParagraphStyle(Paragraphs.about)} onClick={() => goToElementId('about-p-i')}>О Нас</span>
                         <span className={getParagraphStyle(Paragraphs.operations)} onClick={() => goToElementId('operations-p-i')}>Операционный День</span>
                         <span className={getParagraphStyle(Paragraphs.partners)} onClick={() => goToElementId('partners-p-i')}>Партнёры</span>
-                        <span className={getParagraphStyle(Paragraphs.menuRequisites)} >Реквизиты</span>
+                        <span className={getParagraphStyle(Paragraphs.menuRequisites)} onClick={() => goToElementId('menu-requisites-p-i')} >Реквизиты</span>
                     </div>
                 </span>
             </div>

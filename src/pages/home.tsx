@@ -31,6 +31,7 @@ const Home = () => {
         const about = document.getElementById('about-p-i')
         const partners = document.getElementById('partners-p-i')
         const operations = document.getElementById('operations-p-i')
+        const menuRequisites = document.getElementById('menu-requisites-p-i')
 
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting && entries[0].target === about) {
@@ -39,6 +40,8 @@ const Home = () => {
                 topbarFunc(Paragraphs.operations)
             } else if (entries[0].isIntersecting && entries[0].target === partners) {
                 topbarFunc(Paragraphs.partners)
+            } else if (entries[0].isIntersecting && entries[0].target === menuRequisites) {
+                topbarFunc(Paragraphs.menuRequisites)
             } else {
                 //
             }
@@ -47,11 +50,13 @@ const Home = () => {
         about && observer.observe(about)
         partners && observer.observe(partners)
         operations && observer.observe(operations)
+        menuRequisites && observer.observe(menuRequisites)
 
         return () => {
             about && observer.unobserve(about)
             partners && observer.unobserve(partners)
             operations && observer.unobserve(operations)
+            menuRequisites && observer.unobserve(menuRequisites)
         }
     }, [])
 
@@ -100,6 +105,13 @@ const Home = () => {
             <div className="partners-p-background" style={{backgroundImage: 'url(' + getPost(posts[rnd2]) + ')', opacity: posts.length == 0 ? 0 : 1}}></div>
             <div className="partners-p">
                 <div id="partners-p-i">
+                    <p>Сейчас мы активно развиваем направление по проведению потоковых операция по контролю численности животных. Бесплатно для бездомных животных и льготно для домашних. Наши хирурги ежемесячно проводят два операционных дня в наших стенах на волонтерских началах, чтобы жизнь в городе для животных и людей стала безопаснее. Мы также организуем выездные операционные дни в небольших населенных пунктах.</p>
+                    <p>За 2019 год было проведено ??? количество операций по контролю численности, оказана помощь ??? животным, благодаря Базе реабилитации обрели хозяев ??? кошек и собак.</p>
+                </div>
+            </div>
+            <div className="menu-requisites-p">
+                <img src="/images/about.jpg" />
+                <div id="menu-requisites-p-i">
                     <p>Сейчас мы активно развиваем направление по проведению потоковых операция по контролю численности животных. Бесплатно для бездомных животных и льготно для домашних. Наши хирурги ежемесячно проводят два операционных дня в наших стенах на волонтерских началах, чтобы жизнь в городе для животных и людей стала безопаснее. Мы также организуем выездные операционные дни в небольших населенных пунктах.</p>
                     <p>За 2019 год было проведено ??? количество операций по контролю численности, оказана помощь ??? животным, благодаря Базе реабилитации обрели хозяев ??? кошек и собак.</p>
                 </div>

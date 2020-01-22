@@ -197,21 +197,24 @@
 
 .about-p,
 .operations-p,
-.partners-p {
+.partners-p,
+.menu-requisites-p {
     display: flex;
     align-items: center;
     height: 100vh;
 }
 .about-p div,
 .operations-p div,
-.partners-p div {
+.partners-p div,
+.menu-requisites-p div {
     background-color:rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     width: 50%;
     padding: 0 20px;
     font-size: 18px;
 }
-.operations-p img {
+.operations-p img,
+.menu-requisites-p img {
     width: 50%;
     border-radius: 10px;
 }
@@ -366,7 +369,8 @@
     .feed-block {
         padding: 0 5%;
     }
-    .about-p-background {
+    .about-p-background,
+    .partners-p-background {
         margin-left: -5%;
     }
     .footer {

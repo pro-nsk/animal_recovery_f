@@ -19,7 +19,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
-    "typescript": "3.7.4"
+    "typescript": "3.7.5"
   },
   "scripts": {
     "start": "set PORT=3009 && ./node_modules/.bin/react-scripts-ts start",
