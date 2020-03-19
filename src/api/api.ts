@@ -39,7 +39,7 @@ class Api extends BaseApi {
         }
 
         try {
-            let response = await this.fetch(configuration.basePath + '/post', options)
+            const response = await this.fetch(configuration.basePath + '/post', options)
             if (response) {
                 return Promise.resolve(true)
             } else {
@@ -58,7 +58,7 @@ class Api extends BaseApi {
         }
 
         try {
-            let response = await this.fetch(configuration.basePath + '/post/' + id, options)
+            const response = await this.fetch(configuration.basePath + '/post/' + id, options)
             if (response) {
                 return Promise.resolve(true)
             } else {
@@ -132,8 +132,8 @@ class Api extends BaseApi {
 
     private async sendRequest(url: string): Promise<any> {
         try {
-            let response = await this.fetch(/*configuration.basePath + */url, {method: 'GET'})
-            let json = await response.json()
+            const response = await this.fetch(/*configuration.basePath + */url, {method: 'GET'})
+            const json = await response.json()
             return Promise.resolve(json)
         } catch (error) {
             return processError(error)

@@ -1,15 +1,15 @@
 import * as React from 'react'
 import {useContext, useEffect, useState} from 'react'
-import {api} from '../api/api'
-import {TopbarContext} from '../app'
-import {Paragraphs, SITE_NAME} from '../util/util'
+import {Paragraphs, SITE_NAME, goToElementId} from '../util/util'
 import './style.css'
+import './../css/common.css'
+import {TopbarContext} from '../components/contextProvider'
 
 const Home = () => {
 
     const topbarFunc = useContext(TopbarContext).func
+    const {posts} = useContext(TopbarContext)
 
-    const [posts, setPosts] = useState([])
     const [rnd1, setRnd1] = useState(0)
     const [rnd2, setRnd2] = useState(0)
 
@@ -17,24 +17,25 @@ const Home = () => {
         return Math.floor(Math.random() * (max - min + 1)) + min
     }
 
-    const loadData = async () => {
-        const posts = await api.getPhotos()
-        setPosts(posts.photoset.photo)
-        setRnd1(getRandomInt(0, posts.photoset.photo.length - 1))
-        setRnd2(getRandomInt(0, posts.photoset.photo.length - 1))
+    const prepareFeed = () => {
+        setRnd1(getRandomInt(0, posts.length - 1))
+        setRnd2(getRandomInt(0, posts.length - 1))
     }
 
     useEffect(() => {
         document.title = SITE_NAME
-        loadData()
+        prepareFeed()
 
+        const pre = document.getElementById('pre-p-i')
         const about = document.getElementById('about-p-i')
         const partners = document.getElementById('partners-p-i')
         const operations = document.getElementById('operations-p-i')
         const menuRequisites = document.getElementById('menu-requisites-p-i')
 
         const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting && entries[0].target === about) {
+            if (entries[0].isIntersecting && entries[0].target === pre) {
+                topbarFunc(Paragraphs.pre)
+            } else if (entries[0].isIntersecting && entries[0].target === about) {
                 topbarFunc(Paragraphs.about)
             } else if (entries[0].isIntersecting && entries[0].target === operations) {
                 topbarFunc(Paragraphs.operations)
@@ -88,11 +89,20 @@ const Home = () => {
 
     return (
         <div className="feed-block">
-            <div className="about-p-background" style={{backgroundImage: 'url(' + getPost(posts[rnd1]) + ')', opacity: posts.length == 0 ? 0 : 1}}></div>
+            <div className="pre-p-background" style={{backgroundImage: 'url(' + getPost(posts[rnd1]) + ')', opacity: posts.length == 0 ? 0 : 1}}></div>
+            <div className="pre-p">
+                <div id="pre-p-i">
+                    <p className="a-blue">В 2013 году группой единомышленников была основана База реабилитации животных.</p>
+                    <p className="a-red">База реабилитации - это уникальный для Новосибирска проект.</p>
+                    <img className="arrow-more" src="/images/arrow_down.svg" onClick={() => goToElementId('about-p-i')} />
+                </div>
+            </div>
             <div className="about-p">
                 <div id="about-p-i">
-                    <p>В 2013 году группой единомышленников была основана База реабилитации животных. База реабилитации - это уникальный для Новосибирска проект. Это настоящая больница для травмированных бездомных животных. Сюда поступают животные, которым нужна физическая и психологическая реабилитация. Любой человек, нашедший на улице города травмированное животное, может обратиться за помощью на Базу реабилитации. Здесь животное получит бесплатную медицинскую помощь, уход, содержание. Цель данного направления снизить стоимость ветеринарных услуг для бездомных животных.</p>
-                    <p>В 2013 году у нас был только небольшой участок в СНТ и четкое видение того, как мы хотим сделать мир лучше. За эти годы была проведена огромная работа. Сейчас у нас есть корпус, специально спроектированный под нужны животных, современная операционная, отдельный дом для кошек и много чего еще. Но мы не хотим останавливаться на достигнутом! У нас есть амбициозный план по возведению второго корпуса с бассейном, чтобы обеспечить реабилитацию животным с повреждение апорно-двигательного аппарата. И проведению еще большего количества операций по контролю численности животных. Нам необходима Ваша поддержка, чтобы помогать еще большему количеству животных!</p>
+                    <p>В 2013 году группой единомышленников была основана База реабилитации животных. База реабилитации - это уникальный для Новосибирска проект. </p>
+                    <button className="a-button">Наша миссия</button>
+                    {/* <p>В 2013 году группой единомышленников была основана База реабилитации животных. База реабилитации - это уникальный для Новосибирска проект. Это настоящая больница для травмированных бездомных животных. Сюда поступают животные, которым нужна физическая и психологическая реабилитация. Любой человек, нашедший на улице города травмированное животное, может обратиться за помощью на Базу реабилитации. Здесь животное получит бесплатную медицинскую помощь, уход, содержание. Цель данного направления снизить стоимость ветеринарных услуг для бездомных животных.</p> */}
+                    {/* <p className="not-mobile">В 2013 году у нас был только небольшой участок в СНТ и четкое видение того, как мы хотим сделать мир лучше. За эти годы была проведена огромная работа. Сейчас у нас есть корпус, специально спроектированный под нужны животных, современная операционная, отдельный дом для кошек и много чего еще. Но мы не хотим останавливаться на достигнутом! У нас есть амбициозный план по возведению второго корпуса с бассейном, чтобы обеспечить реабилитацию животным с повреждение апорно-двигательного аппарата. И проведению еще большего количества операций по контролю численности животных. Нам необходима Ваша поддержка, чтобы помогать еще большему количеству животных!</p> */}
                 </div>
             </div>
             <div className="operations-p">

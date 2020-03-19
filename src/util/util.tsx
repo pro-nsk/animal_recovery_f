@@ -28,6 +28,7 @@ export function backToTop() {
 }
 
 export enum Paragraphs {
+    pre = 'pre',
     about = 'about',
     operations = 'operations',
     partners = 'partners',

@@ -1,8 +1,8 @@
 import * as React from 'react'
 import '../pages/style.css'
 import {useContext} from 'react'
-import {TopbarContext} from '../app'
 import {Paragraphs, goToElementId} from '../util/util'
+import {TopbarContext} from './contextProvider'
 
 const TopBar = () => {
 
