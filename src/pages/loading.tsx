@@ -19,7 +19,7 @@ const Loading = () => {
 
     return (
         <div className='loading'>
-            <img src={'/images/logo-transparent.png'} id="logo-animate" />
+            <img src={'/images/logo_small.png'} id="logo-animate" />
         </div>
     )
 }

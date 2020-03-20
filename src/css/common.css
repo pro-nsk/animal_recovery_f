@@ -1,25 +1,98 @@
+button:focus,
+a:focus {
+    outline: none;
+}
+
 .a-button {
-    border-radius: 5px;
+    border-radius: 10px;
     border: none;
     background-image: linear-gradient(90deg, #009fe0, #e31e25);
     color: white;
     display: block;
     margin: 20px auto;
-    padding: 10px;
-    font-size: 16px;
+    padding: 20px;
+    font-size: 20px;
+    opacity: 0.9;
+    cursor: pointer;
 }
 .a-blue {
-    /* color: #009fe0; */
-    font-size: 30px;
-    text-shadow: 0 0 1em #009fe0/*, 0 0 1em #009fe0*/;
+    text-shadow: 0px 0px 2px black, 0 0 1em #009fe0;
 }
 .a-red {
-    /* color: #e31e25; */
-    font-size: 30px;
-    text-shadow: 0 0 1em #e31e25/*, 0 0 1em #e31e25*/;
+    text-shadow: 0px 0px 2px black, 0 0 1em #e31e25;
 }
 .arrow-more {
+    height: 30px;
     display: block;
-    margin: 0 auto;
     cursor: pointer;
+    opacity: 0.6;
+}
+
+.accordion {
+    margin: 1em 0 1em 0;
+}
+.accordion > .accordion-button {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    background-image: linear-gradient(258deg,#00a0e044,#e31e2542);
+    padding: 10px;
+    cursor: pointer;
+}
+.accordion > .accordion-content {
+    overflow: hidden;
+    max-height: 0;
+}
+.accordion > .accordion-content.active {
+    max-height: 100%;
+}
+.accordion-arrow.active {
+    transform: rotate(180deg);
+}
+
+@media screen and (max-width: 500px) {
+    .a-blue {
+        font-size: 20px;
+    }
+    .a-red {
+        font-size: 14px;
+    }
+    .arrow-more {
+        margin: auto 0 30% 0;
+    }
+    .a-button {
+        padding: 10px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width: 1000px) {
+    .a-blue {
+        font-size: 40px;
+    }
+    .a-red {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 501px) {
+    .arrow-more {
+        margin: auto 0 5% 0;
+    }
+    .a-button {
+        padding: 20px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    
+}
+@media screen and (min-width: 1001px) {
+    .a-blue {
+        font-size: 50px;
+    }
+    .a-red {
+        font-size: 26px;
+    }   
 }
