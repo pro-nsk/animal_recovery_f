@@ -35,9 +35,14 @@ a:focus {
     display: flex;
     justify-content: space-between;
     border-radius: 10px;
-    background-image: linear-gradient(258deg,#00a0e044,#e31e2542);
     padding: 10px;
     cursor: pointer;
+}
+.about-p .accordion-button {
+    background-image: linear-gradient(258deg,#00a0e044,#e31e2542);
+}
+.operations-p .accordion-button {
+    background-image: linear-gradient(258deg,#e31e2542,#00a0e044);
 }
 .accordion > .accordion-content {
     overflow: hidden;
@@ -45,6 +50,7 @@ a:focus {
 }
 .accordion > .accordion-content.active {
     max-height: 100%;
+    margin-bottom: -1em;
 }
 .accordion-arrow.active {
     transform: rotate(180deg);

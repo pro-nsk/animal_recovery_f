@@ -47,17 +47,20 @@ const Home = () => {
                 topbarFunc(Paragraphs.partners)
             } else if (entries[0].isIntersecting && entries[0].target === menuRequisites) {
                 topbarFunc(Paragraphs.menuRequisites)
+                console.log(5)
             } else {
                 //
             }
         }, {threshold: [1]})
 
+        pre && observer.observe(pre)
         about && observer.observe(about)
         partners && observer.observe(partners)
         operations && observer.observe(operations)
         menuRequisites && observer.observe(menuRequisites)
 
         return () => {
+            pre && observer.unobserve(pre)
             about && observer.unobserve(about)
             partners && observer.unobserve(partners)
             operations && observer.unobserve(operations)
@@ -136,7 +139,7 @@ const Home = () => {
                             <img className="accordion-arrow" src="/images/dropdown-arrow.svg" />
                         </div>
                         <div className="accordion-content">
-
+                            <p>text</p>
                         </div>
                     </div>
                     <div className="accordion">
@@ -145,7 +148,7 @@ const Home = () => {
                             <img className="accordion-arrow" src="/images/dropdown-arrow.svg" />
                         </div>
                         <div className="accordion-content">
-
+                            <p>text</p>
                         </div>
                     </div>
                     <div className="accordion">
@@ -154,7 +157,7 @@ const Home = () => {
                             <img className="accordion-arrow" src="/images/dropdown-arrow.svg" />
                         </div>
                         <div className="accordion-content">
-
+                            <p>text</p>
                         </div>
                     </div>
                     <div className="accordion">
@@ -163,7 +166,7 @@ const Home = () => {
                             <img className="accordion-arrow" src="/images/dropdown-arrow.svg" />
                         </div>
                         <div className="accordion-content">
-
+                            <p>text</p>
                         </div>
                     </div>
                     <div className="accordion">
@@ -172,7 +175,7 @@ const Home = () => {
                             <img className="accordion-arrow" src="/images/dropdown-arrow.svg" />
                         </div>
                         <div className="accordion-content">
-
+                            <p>text</p>
                         </div>
                     </div>
                 </div>
@@ -193,7 +196,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="operations-p">
-                <div className="op-counter"><img src="/images/operations.jpg" />fsdf</div>
+                <div className="op-counter fw500">С января 2019 года было проведено<img src="/images/operations.jpg" />операции по контролю численности животных</div>
                 <div id="operations-p-i">
                     <div className="accordion">
                         <div className="accordion-button" onClick={activator}>
@@ -237,7 +240,7 @@ const Home = () => {
                             <img className="accordion-arrow" src="/images/dropdown-arrow.svg" />
                         </div>
                         <div className="accordion-content">
-
+                            <p>text</p>
                         </div>
                     </div>
                     <div className="accordion">
@@ -246,7 +249,27 @@ const Home = () => {
                             <img className="accordion-arrow" src="/images/dropdown-arrow.svg" />
                         </div>
                         <div className="accordion-content">
-
+                            <p>И нформация о ПОДГОТОВКЕ К ОПЕРАЦИИ по контролю  численности животных.</p>
+                            <p>Напомним, данный вид операции – полостная операция, во время проведения которой у самок убирают матку и яичники, а у самцов семенники. Операция проводится под полным глубоким наркозом.</p>
+                            <p>Перед операцией животное должно быть осмотрено у ветеринарного врача, как минимум УЗИ сердца сделать необходимо. Но даже при этом мы не исключаем рисков, связанных с оперативным вмешательством.</p>
+                            <p>За 6 часов до операции животное не кормить, за 1-2 часа не поить, это важно!</p>
+                            <p>Кошек приносить в переносках, собак обязательно на поводке и в наморднике.</p>
+                            <p>Сразу после операции на кошку или собаку необходимо одеть попону послеоперационную (приобрести её можно в любой ветклинике), предотвращающую разлизывание швов. На котов и кобелей одеваем воротник (продается в зоомагазинах или можно изготовить самим из пластмассового ведра, удалив дно и сделав отверстия рядом с днищем). Воротник должен быть по размеру, то есть его длина  должна быть такой, чтобы нос собаки был «утоплен» внутри него на 10-15 см.</p>
+                            <p>Животное в наркозе после операции располагается в тихом, темном , теплом месте без сквозняков.</p>
+                            <p>Время выхода из наркоза индивидуально и зависит от физиологических особенностей, возраста, сопутствующих и скрытых заболеваний.</p>
+                            <p>!!!Убедительная просьба, самолечением не заниматься!!!</p>
+                            <p>После выхода из наркоза, время выхода составляет 12-24 часа, можно предложить еду, сначала жидкую, а со следующего дня можно кормить привычной пищей, но обязательно следить, чтобы животное регулярно испражнялось.</p>
+                            <p>Через сутки после операции начать обработку швов. Сначала шов смочить водным раствором Хлоргексидина, смыть ватным тампоном загрязнения и засохшую сукровицу из разреза, затем просушить шов и повторять процедуру до полного заживления.</p>
+                            <p>Здоровья вам и вашим питомцам!</p>
+                        </div>
+                    </div>
+                    <div className="accordion">
+                        <div className="accordion-button" onClick={activator}>
+                            <span>Нужды базы</span>
+                            <img className="accordion-arrow" src="/images/dropdown-arrow.svg" />
+                        </div>
+                        <div className="accordion-content">
+                            <p>text</p>
                         </div>
                     </div>
                 </div>
@@ -254,8 +277,13 @@ const Home = () => {
             <div className="menu-requisites-p-background" style={{backgroundImage: 'url(' + getPost(posts[rnd3]) + ')', opacity: posts.length == 0 ? 0 : 1}}></div>
             <div className="menu-requisites-p">
                 <div id="menu-requisites-p-i">
-                    <p>Сейчас мы активно развиваем направление по проведению потоковых операция по контролю численности животных. Бесплатно для бездомных животных и льготно для домашних. Наши хирурги ежемесячно проводят два операционных дня в наших стенах на волонтерских началах, чтобы жизнь в городе для животных и людей стала безопаснее. Мы также организуем выездные операционные дни в небольших населенных пунктах.</p>
-                    <p>За 2019 год было проведено ??? количество операций по контролю численности, оказана помощь ??? животным, благодаря Базе реабилитации обрели хозяев ??? кошек и собак.</p>
+                    <p>Реквизиты для финансовой помощи:</p>
+                    <p>1. Сбербанк <span className="fw500">4817 7601 2741 6992</span></p>
+                    <p>2. Альфа-Банк <span className="fw500">5486 7320 5501 7396</span></p>
+                    <p>Обе карты привязаны к тел. 8-913-909-96-90 на имя Батуевой Анастасии Петровны.</p>
+                    <p>3. Яндекс Кошелёк <span className="fw500">410017369837366</span></p>
+                    <p>4. PayPal <a href="https://www.paypal.me/AnimalRecovery54">www.paypal.me/AnimalRecovery54</a></p>
+                    <p>Спасибо, что вы с нами!</p>
                 </div>
             </div>
         </div>
