@@ -193,7 +193,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="operations-p">
-                <img src="/images/operations.jpg" />
+                <div className="op-counter"><img src="/images/operations.jpg" />fsdf</div>
                 <div id="operations-p-i">
                     <div className="accordion">
                         <div className="accordion-button" onClick={activator}>
