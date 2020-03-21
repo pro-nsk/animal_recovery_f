@@ -19,7 +19,7 @@ a:focus {
     text-shadow: 0px 0px 2px black, 0 0 1em #009fe0;
 }
 .a-red {
-    text-shadow: 0px 0px 2px black, 0 0 1em #e31e25;
+    text-shadow: 0px 0px 2px black/*, 0 0 1em #e31e25*/;
 }
 .arrow-more {
     height: 30px;
