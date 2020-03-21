@@ -244,7 +244,7 @@
 .operations-p > .op-counter {
     border-radius: 10px;
 }
-#operations-p-i ul {
+ul {
     padding-left: 20px;
 }
 .op-counter > img {

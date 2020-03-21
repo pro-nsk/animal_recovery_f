@@ -2,6 +2,9 @@ button:focus,
 a:focus {
     outline: none;
 }
+a {
+    color: black;
+}
 
 .a-button {
     border-radius: 10px;

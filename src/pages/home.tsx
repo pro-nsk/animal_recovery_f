@@ -105,7 +105,7 @@ const Home = () => {
             <div className="pre-p">
                 <div id="pre-p-i">
                     <p className="a-blue">МЫ ДЕЙСТВУЕМ ТОЛЬКО В ИНТЕРЕСАХ&nbsp;ЖИВОТНЫХ</p>
-                    <p className="a-red">Мы создаем уникальный для России проект по стерилизации бездомных животных на безвозмездной основе и оказании бесплатной медицинской помощь травмированным бездомным животным.</p>
+                    <p className="a-red">Мы уникальный проект для России по стерилизации и оказанию ветеринарной помощи для бездомных животных на безвозмездной основе.</p>
                     <button className="a-button" onClick={() => goToElementId('menu-requisites-p-i')}>Помочь!</button>
                     <p className="pre-p-down"><img className="arrow-more" src="/images/arrow_down.svg" onClick={() => goToElementId('about-p-i')} /></p>
                 </div>
@@ -139,7 +139,11 @@ const Home = () => {
                             <img className="accordion-arrow" src="/images/dropdown-arrow.svg" />
                         </div>
                         <div className="accordion-content">
-                            <p>text</p>
+                            <ul>
+                                <li><a href="/doc/galbshtadt.pdf">Письмо поддержки от администрации гальбштадского сельсовета</a></li>
+                                <li><a href="/doc/ident.pdf">Письмо поддержки от центра имплантологии &quot;Ай-Дент&quot;</a></li>
+                                <li><a href="/doc/kaleidoskop.pdf">Письмо поддержки от МКУ МЦ Калейдоскоп</a></li>
+                            </ul>
                         </div>
                     </div>
                     <div className="accordion">
@@ -148,7 +152,15 @@ const Home = () => {
                             <img className="accordion-arrow" src="/images/dropdown-arrow.svg" />
                         </div>
                         <div className="accordion-content">
-                            <p>text</p>
+                            <ul>
+                                <li>Участие в форуме «Экологичный Новосибирск».</li>
+                                <li>Участие в эко-мероприятиях Новосибирска.</li>
+                                <li>Волонтерская деятельность компаний -партнеров.</li>
+                                <li>Благотворительный проект в пользу Базы Реабилитации на платформе PLANETA.RU</li>
+                                <li>Гостевой проект «Выходные на Базе».</li>
+                                <li>Проект «Уроки доброты».</li>
+                                <li>Проект «Особенные гости».</li>
+                            </ul>
                         </div>
                     </div>
                     <div className="accordion">
@@ -189,10 +201,20 @@ const Home = () => {
                     <div><img src="/images/valta.png" />Валта Пед Продактс</div>
                     <div><img src="/images/triol.png" />Триол</div>
                     <div><img src="/images/royal.svg" />Роял Канин</div>
-                    <div><img src="/images/bublik.png" />МонтажБРО</div>
+                    {/* <div><img src="/images/bublik.png" />МонтажБРО</div> */}
                     <div><img src="/images/prospect.png" />Проспект</div>
-                    <div><img src="/images/bublik.png" />Трейд</div>
+                    {/* <div><img src="/images/bublik.png" />Трейд</div> */}
                     <div><img src="/images/global.png" />Глобал Вет</div>
+                    <div><img src="/images/ident.svg" />iDent</div>
+                    <div><img src="/images/sms.png" />СмсФинанс</div>
+                    <div><img src="/images/xarakiri.png" />Харакири</div>
+                    <div><img src="/images/pmi.svg" />Филип Моррис</div>
+                    <div><img src="/images/lerua.svg" />Леруа Мерлен</div>
+                    <div><img src="/images/gavgav.png" />Гав-Гав Маркет</div>
+                    <div><img src="/images/bour.png" />Кинологический центр Боюр</div>
+                    <div><img src="/images/petlandia.png" />Петландия</div>
+                    <div><img src="/images/sportstyle.png" />Спортстайл</div>
+                    <div><img src="/images/tion.svg" />Тион</div>
                 </div>
             </div>
             <div className="operations-p">
@@ -230,7 +252,7 @@ const Home = () => {
                                 <li>Использование стерильных инструментов и расходных материалов.</li>
                                 <li>Использование индивидуальных наборов инструментов для каждого животного.</li>
                                 <li>При проведении операции наш хирург делает максимально маленький разрез, что является менее травматичным для животного, способствует быстрому заживлению после операции и является профилактикой грыж.</li>
-                                <li>После операции накладывается косметический внутрекожный  саморассасывающийся шов, который имеет эстетичный вид и после заживления почти незаметен. Такой шов способствует быстрому заживлению тканей.</li>
+                                <li>После операции накладывается косметический внутрикожный саморассасывающийся шов, который имеет эстетичный вид и после заживления почти незаметен. Такой шов способствует быстрому заживлению тканей.</li>
                             </ul>
                         </div>
                     </div>
@@ -277,6 +299,7 @@ const Home = () => {
             <div className="menu-requisites-p-background" style={{backgroundImage: 'url(' + getPost(posts[rnd3]) + ')', opacity: posts.length == 0 ? 0 : 1}}></div>
             <div className="menu-requisites-p">
                 <div id="menu-requisites-p-i">
+                    <p>НРОО по оказанию помощи животным &quot;База реабилитации животных&quot; ИНН 5408023500</p>
                     <p>Реквизиты для финансовой помощи:</p>
                     <p>1. Сбербанк <span className="fw500">4817 7601 2741 6992</span></p>
                     <p>2. Альфа-Банк <span className="fw500">5486 7320 5501 7396</span></p>
