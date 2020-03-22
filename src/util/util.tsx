@@ -38,6 +38,6 @@ export enum Paragraphs {
 export function goToElementId(elementId) {
     const targetElement = document.getElementById(elementId)
     if (targetElement) {
-        targetElement.scrollIntoView({behavior: 'smooth', block: 'center'})
+        targetElement.scrollIntoView({behavior: 'smooth', block: 'start'})
     }
 }

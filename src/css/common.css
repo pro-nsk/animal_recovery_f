@@ -59,6 +59,14 @@ a {
     transform: rotate(180deg);
 }
 
+.title {
+    font-weight: 500;
+}
+
+/* .p-start {
+    font-size: 36px;    
+} */
+
 @media screen and (max-width: 500px) {
     .a-blue {
         font-size: 20px;
@@ -71,6 +79,14 @@ a {
     }
     .a-button {
         padding: 10px;
+        font-size: 18px;
+    }
+    .title {
+        font-size: 16px;
+    }
+}
+@media screen and (min-width: 501px) and (max-width: 600px) {
+    .title {
         font-size: 18px;
     }
 }
@@ -93,8 +109,16 @@ a {
         font-size: 20px;
     }
 }
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+    .title {
+        font-size: 20px;
+    }
+}
 
 @media screen and (max-width: 1000px) {
+    .title {
+        text-align: center;
+    }
     
 }
 @media screen and (min-width: 1001px) {
@@ -103,5 +127,15 @@ a {
     }
     .a-red {
         font-size: 26px;
-    }   
+    }
+}
+@media screen and (min-width: 1001px) and (max-width: 1300px) {
+    .title {
+        font-size: 22px;
+    }
+}
+@media screen and (min-width: 1301px) {
+    .title {
+        font-size: 24px;
+    }
 }
