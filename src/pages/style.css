@@ -57,7 +57,7 @@
 }
 .paragraphs > span:hover,
 .p-h-span {
-    background-image: linear-gradient(90deg, #009fe0, #e31e25);
+    background-image: linear-gradient(90deg, var(--blue-light), var(--red-light));
     color: white;
 }
 
@@ -128,7 +128,7 @@
 .in:hover ~ .in-before,
 .fb:hover ~ .fb-before,
 .vk:hover ~ .vk-before {
-    background-image: linear-gradient(90deg, #009fe0, #e31e25);
+    background-image: linear-gradient(90deg, var(--blue-light), var(--red-light));
 }
 .in {
     background-image: url(/images/instagram.svg);
@@ -144,7 +144,7 @@
     text-decoration: none;
 }
 .email a:hover {
-    color: #009fe0;
+    color: var(--blue-light);
     text-decoration: underline;
 }
 
@@ -304,6 +304,7 @@ ul {
     padding: 0 1em 0 1em;
     border-radius: 10px;
     height: fit-content;
+    box-shadow: 0 0 1em #00a0e054;
 }
 
 @media screen and (max-width: 500px) {
@@ -392,8 +393,11 @@ ul {
     .menu-btn > span::after {
         top: 8px;
     }
-    .partners-p-content > div {
+    .partners-logos {
         font-size: 10px;
+    }
+    .partners-p-content {
+        width: 100%;
     }
 }
 @media screen and (min-width: 601px) {
@@ -463,7 +467,7 @@ ul {
         margin: 150px 0 0 30px;
         padding: 0 130px;
     }
-    .partners-p-content > div {
+    .partners-logos {
         font-size: 12px;
     }
 }
@@ -510,7 +514,7 @@ ul {
     .operations-p-content > .operations-p-blocks {
         width: 100%;
     }
-    .partners-p-content > div {
+    .partners-logos {
         grid-template-columns: repeat(3, 20%);
         grid-column-gap: 18%;
     }
@@ -540,7 +544,7 @@ ul {
     /* .menu-requisites-p > div { */
         width: 50%;
     }
-    .partners-p-content > div {
+    .partners-logos {
         grid-template-columns: repeat(5, 10%);
         grid-column-gap: 12%;
     }
@@ -551,7 +555,7 @@ ul {
     .operations-p-content > .operations-p-blocks {
         padding-left: 20px;
     }
-    .partners-p-content > div {
+    .partners-logos {
         font-size: 14px;
     }
     .about-blocks,

@@ -17,6 +17,8 @@
 
 :root {
     --ubuntu-font-family: 'Ubuntu', sans-serif;
+    --red-light: #e31e25;
+    --blue-light: #009fe0;
 }
 
 /*reset*/

@@ -9,7 +9,7 @@ a {
 .a-button {
     border-radius: 10px;
     border: none;
-    background-image: linear-gradient(90deg, #009fe0, #e31e25);
+    background-image: linear-gradient(90deg, var(--blue-light), var(--red-light));
     color: white;
     display: block;
     margin: 20px auto;
@@ -19,10 +19,10 @@ a {
     cursor: pointer;
 }
 .a-blue {
-    text-shadow: 0px 0px 2px black, 0 0 1em #009fe0;
+    text-shadow: 0px 0px 2px black, 0 0 1em var(--blue-light);
 }
 .a-red {
-    text-shadow: 0px 0px 2px black/*, 0 0 1em #e31e25*/;
+    text-shadow: 0px 0px 2px black;
 }
 .arrow-more {
     height: 30px;

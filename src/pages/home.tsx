@@ -6,6 +6,7 @@ import './../css/common.css'
 import {TopbarContext} from '../components/contextProvider'
 
 const UserCarousel = React.lazy(() => import('../components/userCarousel'))
+const PartnersCarousel = React.lazy(() => import('../components/partnersCarousel'))
 
 const Home = () => {
 
@@ -163,6 +164,10 @@ const Home = () => {
                                         <li>Гостевой проект «Выходные на Базе».</li>
                                         <li>Проект «Уроки доброты».</li>
                                         <li>Проект «Особенные гости».</li>
+                                        <li>Обучение команды. Выездной семинар Дмитрия Тарасова по нейробиологии и зоопсихологии.</li>
+                                        <li>Семинар Юрия Бояркина по послушанию собак.</li>
+                                        <li>Мастер-класс реабилитолога Светланы Степановой.</li>
+                                        <li>Обучение основам дрессировки собак при поддержке кинологов Старковой Ольги и Курдюковой Аурики.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -194,7 +199,7 @@ const Home = () => {
                                         <li><a href="https://vk.com/videos-169726907?z=video1187585_456239128%2Fpl_-169726907_-2">Первый канал &quot;Санаторий для четвероногих&quot;</a></li>
                                         <li><a href="https://vk.com/videos-169726907?z=video-169726907_456239211%2Fpl_-169726907_-2">Россия 1</a></li>
                                         <li><a href="https://planeta.ru/campaigns/85733">Проект на Планете &quot;Строим больницу для бездомных животных&quot;</a></li>
-                                        <li><a href="https://vn.ru/news-predannye-nam-predannye-nami-bolnitsa-dlya-bezdomnykh-sobak/">&quot;Преданные нам, преданные нами -больница для бездомных собак.&quot;</a></li>
+                                        <li><a href="https://vn.ru/news-predannye-nam-predannye-nami-bolnitsa-dlya-bezdomnykh-sobak/">&quot;Преданные нам, преданные нами - больница для бездомных собак.&quot;</a></li>
                                         <li><a href="https://ngs.ru/more/66418408/">НГС. &quot;Щенок Ардан с редким синдромом&quot;</a></li>
                                         <li><a href="https://www.kolcovo.ru/content/media/?video=17880">Кольцово.ru Социальный репортаж</a></li>
                                         <li><a href="https://rg.ru/2020/01/14/reg-sibfo/v-novosibirske-spasli-psa-s-vrosshim-v-kozhu-oshejnikom.html">Росссийская газета. История ротвелера Жана.</a></li>
@@ -232,26 +237,9 @@ const Home = () => {
             <div id="partners-p-i" className="partners-p">
                 <div className="partners-p-content">
                     <p className="title">Наши партнёры</p>
-                    <div className="partners-logos">
-                        <div><img src="/images/interra.png" />ИнТерра</div>
-                        <div><img src="/images/bublik.png" />Бублик Shop</div>
-                        <div><img src="/images/mars.png" />Mars</div>
-                        <div><img src="/images/valta.png" />Валта Пед Продактс</div>
-                        <div><img src="/images/triol.png" />Триол</div>
-                        <div><img src="/images/royal.svg" />Роял Канин</div>
-                        <div><img src="/images/prospect.png" />Проспект</div>
-                        <div><img src="/images/global.png" />Глобал Вет</div>
-                        <div><img src="/images/ident.svg" />iDent</div>
-                        <div><img src="/images/sms.png" />СмсФинанс</div>
-                        <div><img src="/images/xarakiri.png" />Харакири</div>
-                        <div><img src="/images/pmi.svg" />Филип Моррис</div>
-                        <div><img src="/images/lerua.svg" />Леруа Мерлен</div>
-                        <div><img src="/images/gavgav.png" />Гав-Гав Маркет</div>
-                        <div><img src="/images/bour.png" />Кинологический центр Боюр</div>
-                        <div><img src="/images/petlandia.png" />Петландия</div>
-                        <div><img src="/images/sportstyle.png" />Спортстайл</div>
-                        <div><img src="/images/tion.svg" />Тион</div>
-                    </div>
+                    <Suspense fallback="">
+                        <PartnersCarousel />
+                    </Suspense>
                 </div>
             </div>
             <div id="operations-p-i" className="operations-p">
