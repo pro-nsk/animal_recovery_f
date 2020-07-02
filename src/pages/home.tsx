@@ -147,6 +147,9 @@ const Home = () => {
                                         <li><a href="/doc/galbshtadt.pdf">Письмо поддержки от администрации гальбштадского сельсовета</a></li>
                                         <li><a href="/doc/ident.pdf">Письмо поддержки от центра имплантологии &quot;Ай-Дент&quot;</a></li>
                                         <li><a href="/doc/kaleidoskop.pdf">Письмо поддержки от МКУ МЦ Калейдоскоп</a></li>
+                                        <li><a href="/doc/dejatelnost.pdf">Сообщение о продолжении деятельности</a></li>
+                                        <li><a href="/doc/otchot_den.pdf">Отчет об объеме денежных средств...</a></li>
+                                        <li><a href="/doc/buh_otchot.pdf">Бухгалтерский отчёт за 2019г</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -203,6 +206,8 @@ const Home = () => {
                                         <li><a href="https://ngs.ru/more/66418408/">НГС. &quot;Щенок Ардан с редким синдромом&quot;</a></li>
                                         <li><a href="https://www.kolcovo.ru/content/media/?video=17880">Кольцово.ru Социальный репортаж</a></li>
                                         <li><a href="https://rg.ru/2020/01/14/reg-sibfo/v-novosibirske-spasli-psa-s-vrosshim-v-kozhu-oshejnikom.html">Росссийская газета. История ротвелера Жана.</a></li>
+                                        <li><a href="https://ngs.ru/more/66418408/">В Кольцово привезли щенка Ардана с редким синдромом</a></li>
+                                        <li><a href="https://zen.yandex.ru/media/id/5dfb2ab35d6c4b00b8bae987/sterilizaciia-jivotnyh-odin-iz-sposobov-borby-s-brodiachimi-koshechkami-i-sobakami-5ee9af49ea4cc23652080a1f">В Искитиме прошла акция по бесплатной стерилизации бродячих животных</a></li>
                                     </ul>
                                 </div>
                             </div>

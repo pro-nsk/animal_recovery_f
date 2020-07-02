@@ -13,7 +13,7 @@ const partners = [
         pic5: '/images/triol.png', name5: 'Триол',
         pic6: '/images/royal.svg', name6: 'Роял Канин',
         pic7: '/images/prospect.png', name7: 'Проспект',
-        pic8: '/images/global.png', name8: 'Глобал Вет',
+        pic8: '/images/pgrants_logo_gp-vertical.png', name8: 'Фонд президентских грантов',
         pic9: '/images/ident.svg', name9: 'iDent',
         pic10: '/images/sms.png', name10: 'СмсФинанс',
         pic11: '/images/xarakiri.png', name11: 'Харакири',
@@ -28,7 +28,8 @@ const partners = [
         pic2: '/images/sportstyle.png', name2: 'Спортстайл',
         pic3: '/images/tion.svg', name3: 'Тион',
         pic4: '/images/nemec.gif', name4: 'Администрация Гальбштадта',
-        pic5: '/images/kaleidoskop.png', name5: 'Калейдоскоп'
+        pic5: '/images/kaleidoskop.png', name5: 'Калейдоскоп',
+        pic6: '/images/global.png', name6: 'Глобал Вет'
     },
 ]
 
