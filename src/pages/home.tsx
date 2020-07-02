@@ -250,7 +250,7 @@ const Home = () => {
             <div id="operations-p-i" className="operations-p">
                 <p className="title">Операция &quot;Простая математика&quot;</p>
                 <div className="operations-p-content">
-                    <div className="op-counter fw500">С января 2019 года было проведено<img src="/images/operations.jpg" />операции по контролю численности животных</div>
+                    <div className="op-counter fw500">С января 2019 года было проведено<img src="/images/operations1.jpg" />операции по контролю численности животных</div>
                     <div className="operations-p-blocks">
                         <div className="accordion">
                             <div className="accordion-button" onClick={activator}>
