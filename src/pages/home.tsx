@@ -150,6 +150,8 @@ const Home = () => {
                                         <li><a href="/doc/dejatelnost.pdf">Сообщение о продолжении деятельности</a></li>
                                         <li><a href="/doc/otchot_den.pdf">Отчет об объеме денежных средств...</a></li>
                                         <li><a href="/doc/buh_otchot.pdf">Бухгалтерский отчёт за 2019г</a></li>
+                                        <li><a href="/doc/svidetelstvo.pdf">Свидетельство о государственной регистрации</a></li>
+                                        <li><a href="/doc/ustav.pdf">Устав по оказанию помощи животным</a></li>
                                     </ul>
                                 </div>
                             </div>
