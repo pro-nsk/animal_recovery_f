@@ -1,10 +1,11 @@
 import * as React from 'react'
-import {useContext, useEffect} from 'react'
-import '../pages/style.css'
-import {goToElementId, Paragraphs} from '../util/util'
-import {TopbarContext} from './contextProvider'
+import { useContext, useEffect } from 'react'
+import '../css/main.css'
+import AppProps from '../util/appProps'
+import { goToElementId, Paragraphs } from '../util/util'
+import { TopbarContext } from './contextProvider'
 
-const TopBar = () => {
+const TopBar = (props: AppProps) => {
 
     const topbarContext = useContext(TopbarContext).topbar
 
@@ -24,14 +25,15 @@ const TopBar = () => {
         document.onclick = handleClick
     }, [])
 
-    const scrollToTop = () => {
-        window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+    const scrollToHome = () => {
+        if (props.location != '/') props.history.push('/')
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
     }
 
     return (
         <div id="top-bar" className="top-bar">
             <div id="menu">
-                <span id="menu-logo" ><img onClick={scrollToTop} src="/images/logo.jpg" /></span>
+                <span id="menu-logo" ><img onClick={scrollToHome} src="/images/logo.jpg" /></span>
                 <span id="menu-title" >
                     <input id="menu-toggle" type="checkbox" />
                     <label className="menu-btn" htmlFor="menu-toggle">

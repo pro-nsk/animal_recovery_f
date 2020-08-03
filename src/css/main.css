@@ -5,7 +5,7 @@
     font-size: 12px;
 }
 
-.home {
+.main-content {
     margin: 0 auto;
     height: 100%;
 }
@@ -89,7 +89,7 @@
   }
 }
 
-.feed-block {
+.page-content {
     color: black;
 }
 .pre-p-background,
@@ -139,11 +139,11 @@
 .vk {
     background-image: url(/images/vk.svg);
 }
-.email a {
+a {
     color: black;
     text-decoration: none;
 }
-.email a:hover {
+a:hover {
     color: var(--blue-light);
     text-decoration: underline;
 }
@@ -265,9 +265,6 @@
 ul {
     padding-left: 20px;
 }
-.op-counter > img {
-    width: 100%;
-}
 .op-counter {
     text-align: center;
 }
@@ -304,7 +301,31 @@ ul {
     padding: 0 1em 0 1em;
     border-radius: 10px;
     height: fit-content;
-    box-shadow: 0 0 1em #00a0e054;
+    box-shadow: 0 0 1em #00a0e02a;
+}
+.about-p .about-intro div,
+.a-i-link {
+    font-style: italic;
+    text-align: center;
+}
+.about-p .about-intro div {
+    font-size: 26px;
+}
+.about-intro img {
+    margin-bottom: 2%;
+}
+.about-intro .a-i-end {
+    transform: rotate(180deg);
+}
+.about-intro .a-i-start {
+    margin-right: 2%;
+}
+.about-intro .a-i-end {
+    margin-left: 2%;
+}
+.a-i-link {
+    margin: 3% 0;
+    display: block;
 }
 
 @media screen and (max-width: 500px) {
@@ -475,7 +496,7 @@ ul {
     #menu-title .t {
         width: 90%;
     }
-    .feed-block {
+    .page-content {
         padding: 0 5%;
     }
     .pre-p-background,
@@ -528,7 +549,7 @@ ul {
     }
 }
 @media screen and (min-width: 1001px) {
-    .feed-block {
+    .page-content {
         padding: 0 130px;
     }
     .pre-p-background,
@@ -588,7 +609,8 @@ ul {
         margin-left: auto;
     }
     .about-p div,
-    .operations-p div,
+    .operations-p div > p,
+    .operations-p .operations-p-blocks,
     .menu-requisites-p div {
         font-size: 18px;
     }
