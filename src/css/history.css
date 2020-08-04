@@ -1,8 +1,15 @@
 .history {
-    padding-top: 100px;
+    padding: 100px 0 100px 0;
     background-image: url(/images/logo-transparent-blue.svg);
     background-repeat: no-repeat;
     background-size: 200%;
-    background-position: 30% 50%;
+    background-position: 30% 30%;
     background-blend-mode: screen;
+}
+.h-group-p {
+    width: 100%;
+}
+.h-copyright {
+    margin-top: 2%;
+    text-align: right;
 }

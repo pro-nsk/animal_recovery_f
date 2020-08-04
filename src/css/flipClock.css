@@ -1,3 +1,30 @@
-.tick {
-   font-size: 8rem;
+@media screen and (max-width: 400px) {
+   .tick {
+      font-size: 3rem;
+   }
+}
+@media screen and (min-width: 401px) and (max-width: 700px) {
+   .tick {
+      font-size: 4rem;
+   }
+}
+@media screen and (min-width: 701px) and (max-width: 1000px) {
+   .tick {
+      font-size: 6rem;
+   }
+}
+@media screen and (min-width: 1001px) and (max-width: 1300px) {
+   .tick {
+      font-size: 4rem;
+   }
+}
+@media screen and (min-width: 1301px) and (max-width: 1600px) {
+   .tick {
+      font-size: 6rem;
+   }
+}
+@media screen and (min-width: 1601px) {
+   .tick {
+      font-size: 8rem;
+   }
 }

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Redirect, Route, Router, Switch } from 'react-router'
 import ContextProvider from './components/contextProvider'
 import Footer from './components/footer'
@@ -13,6 +13,14 @@ import AppProps from './util/appProps'
 const App = (props: AppProps) => {
 
     const [ready, setReady] = useState(false)
+
+    useEffect(() => {
+        props.history.listen((location) => {
+            if (!location.hash) {
+                window.scrollTo(0, 0)
+            }
+        })
+    }, [])
 
     return (
         <ContextProvider readyFunc={setReady}>

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 const UserCarousel = React.lazy(() => import('../components/userCarousel'))
 const PartnersCarousel = React.lazy(() => import('../components/partnersCarousel'))
-const FlipClock = React.lazy(() => import('../components/flipClock'))
+const FlipCounter = React.lazy(() => import('../components/flipCounter'))
 
 const Home = () => {
 
@@ -117,7 +117,7 @@ const Home = () => {
                 <div className="about-intro">
                     <div>
                         <img className="a-i-start" src="/images/dots.svg" />
-                            С 2013 года и по наши дни <br />мы занимаемся реабилитацией животных...
+                            С 2013 года и по сей день <br />мы помогаем бездомным животным...
                         <img className="a-i-end" src="/images/dots.svg" />
                     </div>
                     <Link className="a-i-link" to="history">Наша история...</Link>
@@ -246,7 +246,7 @@ const Home = () => {
                     <div className="op-counter fw500">
                         <p>С января 2019 года было проведено</p>
                         <Suspense fallback="">
-                            <FlipClock />
+                            <FlipCounter />
                         </Suspense>
                         <p>операции по контролю численности животных</p>
                     </div>

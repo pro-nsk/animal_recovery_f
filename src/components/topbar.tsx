@@ -26,8 +26,11 @@ const TopBar = (props: AppProps) => {
     }, [])
 
     const scrollToHome = () => {
-        if (props.location != '/') props.history.push('/')
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+        if (props.location.pathname != '/') {
+            props.history.push('/')
+        } else {
+            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+        }
     }
 
     return (

@@ -1,0 +1,12 @@
+.footer,
+.footer a {
+    color: #e0e0e0;
+}
+.footer {
+    font-size: 14px;
+    min-height: 100px;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: #333232; */
+    background-image: linear-gradient(#202020,#333232);
+}
