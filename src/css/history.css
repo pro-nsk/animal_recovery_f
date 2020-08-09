@@ -1,5 +1,4 @@
 .history {
-    padding: 100px 0 100px 0;
     background-image: url(/images/logo-transparent-blue.svg);
     background-repeat: no-repeat;
     background-size: 200%;
@@ -12,4 +11,15 @@
 .h-copyright {
     margin-top: 2%;
     text-align: right;
+}
+
+@media screen and (max-width: 600px) {
+    .history {
+        padding: 50px 0 50px 0;
+    }
+}
+@media screen and (min-width: 601px) {
+    .history {
+        padding: 100px 0 100px 0;
+    }
 }

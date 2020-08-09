@@ -286,9 +286,6 @@ ul {
     font-style: italic;
     text-align: center;
 }
-.about-p .about-intro div {
-    font-size: 26px;
-}
 .about-intro img {
     margin-bottom: 2%;
 }
@@ -321,7 +318,8 @@ ul {
     .about-p div,
     .operations-p div > p,
     .operations-p .operations-p-blocks,
-    .menu-requisites-p div {
+    .menu-requisites-p div,
+    .history {
         font-size: 14px;
     }
     .not-mobile {
@@ -399,6 +397,12 @@ ul {
     .partners-p-content {
         width: 100%;
     }
+    .about-p .about-intro div {
+        font-size: 16px;
+    }
+    .about-intro img {
+        width: 14px;
+    }
 }
 @media screen and (min-width: 601px) {
     #menu-title {
@@ -469,6 +473,9 @@ ul {
     }
     .partners-logos {
         font-size: 12px;
+    }
+    .about-p .about-intro div {
+        font-size: 20px;
     }
 }
 @media screen and (max-width: 1000px) {
@@ -567,6 +574,9 @@ ul {
     .about-main {
         margin: 1em 0 1em 0;
     }
+    .about-p .about-intro div {
+        font-size: 26px;
+    }
 }
 @media screen and (min-width: 1001px) and (max-width: 1300px) {
     #menu-title {
@@ -590,7 +600,8 @@ ul {
     .about-p div,
     .operations-p div > p,
     .operations-p .operations-p-blocks,
-    .menu-requisites-p div {
+    .menu-requisites-p div, 
+    .history {
         font-size: 18px;
     }
 }
