@@ -120,7 +120,7 @@ const Home = () => {
                             С 2013 года и по сей день <br />мы помогаем бездомным животным...
                         <img className="a-i-end" src="/images/dots.svg" />
                     </div>
-                    <Link className="a-i-link" to="history">Наша история...</Link>
+                    <Link className="a-i-link" to="history">Подробнее о проекте...</Link>
                 </div>
                 <div>
                     <Suspense fallback="">

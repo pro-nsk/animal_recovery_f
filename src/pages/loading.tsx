@@ -8,8 +8,13 @@ const Loading = () => {
     const {setPosts, readyFunc} = useContext(TopbarContext)
 
     const loadData = async () => {
-        const posts = await api.getPhotos()
-        setPosts(posts.photoset.photo)
+        try {
+            const posts = await api.getPhotos()
+            setPosts(posts.photoset.photo)
+        } catch (error) {
+            setPosts([])
+        }
+        
         readyFunc(true)
     }
 

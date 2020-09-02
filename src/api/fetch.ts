@@ -1,12 +1,12 @@
 import * as isofetch from 'isomorphic-fetch'
 import {StorageKey} from '../util/storage'
 
-export function fetch(input: RequestInfo, init?: RequestInit): Promise<Response> {
+export function fetch(input: RequestInfo, init?: RequestInit, withCredentials?: boolean): Promise<Response> {
 
     init = init || {}
     init = {
         ...init,
-        // credentials: 'include',
+        credentials: withCredentials ? 'include' : 'include',
         headers: {
             ...init.headers
         }

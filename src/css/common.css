@@ -78,6 +78,57 @@ a:hover {
     font-weight: 500;
 }
 
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.form input, .form textarea {
+    width: 300px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: lightgray;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.form input:focus,
+.form textarea:focus {
+    outline-width: 0;
+}
+.form textarea {
+    height: 200px;
+    scrollbar-color: grey lightgray;
+    scrollbar-width: thin;
+}
+.form textarea::-webkit-scrollbar {
+    background-color: lightgray;
+    width:6px
+}
+.form textarea::-webkit-scrollbar-track {
+    background-color: lightgray
+}
+.form textarea::-webkit-scrollbar-thumb {
+    background-color: grey;
+}
+.form .pro-buttons {
+    width: 200px;
+}
+.form .form-b-1 {
+    float: left;
+    cursor: pointer;
+}
+.form .form-b-2 {
+    float: right;
+    cursor: pointer;
+}
+.error {
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
 /* .p-start {
     font-size: 36px;    
 } */

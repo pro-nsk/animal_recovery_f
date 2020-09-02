@@ -1,6 +1,12 @@
-import {BaseApi, configuration} from './base/baseApi'
-import {processError} from './fetch'
-import {StorageKey} from '../util/storage'
+import { BaseApi, configuration } from './base/baseApi'
+import { processError } from './fetch'
+import { StorageKey } from '../util/storage'
+
+interface Options {
+    method: string
+    body?: any
+    headers?: any
+}
 
 export interface Post {
     _id?: string
@@ -10,6 +16,17 @@ export interface Post {
 }
 
 class Api extends BaseApi {
+
+    async counter(id): Promise<any> {
+        return this.sendRequest('/operations-counter/' + id)
+    }
+
+    async counterCreate(): Promise<any> {
+        return this.sendRequest('/operations-counter/', {
+            method: 'POST',
+            body: JSON.stringify({counter: 22})
+        }, true)
+    }
 
     async home(page: number): Promise<any> {
         return this.sendRequest('/home/' + page)
@@ -113,7 +130,7 @@ class Api extends BaseApi {
 
     async logout(): Promise<boolean> {
         try {
-            await this.fetch(configuration.basePath + '/logout', {method: 'GET'})
+            await this.fetch(configuration.basePath + '/logout', { method: 'GET' })
             localStorage.removeItem(StorageKey.Authenticated)
             return Promise.resolve(true)
         } catch (e) {
@@ -123,16 +140,17 @@ class Api extends BaseApi {
 
     async delete(id: string): Promise<boolean> {
         try {
-            await this.fetch(configuration.basePath + '/post/' + id, {method: 'DELETE'})
+            await this.fetch(configuration.basePath + '/post/' + id, { method: 'DELETE' })
             return Promise.resolve(true)
         } catch (error) {
             return processError(error)
         }
     }
 
-    private async sendRequest(url: string): Promise<any> {
+    private async sendRequest(url: string, options: Options = {method: 'GET'}, withCredentials?: boolean): Promise<any> {
         try {
-            const response = await this.fetch(/*configuration.basePath + */url, {method: 'GET'})
+            const finalUrl = url.indexOf('http') > -1 ? url : configuration.basePath + url
+            const response = await this.fetch(finalUrl, options, withCredentials)
             const json = await response.json()
             return Promise.resolve(json)
         } catch (error) {

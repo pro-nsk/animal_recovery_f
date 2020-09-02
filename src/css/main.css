@@ -84,6 +84,8 @@
 
 .page-content {
     color: black;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 .pre-p-background,
 .partners-p-background,
@@ -96,6 +98,7 @@
     background-position: center;
     background-color: grey;
     transition: opacity 1s ease-in-out;
+    left: 0;
 }
 
 .social a {
@@ -488,7 +491,7 @@ ul {
     .pre-p-background,
     .partners-p-background,
     .menu-requisites-p-background {
-        margin-left: -5%;
+        /* margin-left: -5%; */
     }
     .footer {
         padding: 0 5%;
@@ -541,7 +544,7 @@ ul {
     .pre-p-background,
     .partners-p-background,
     .menu-requisites-p-background {
-        margin-left: -130px;
+        /* margin-left: -130px; */
     }
     .footer {
         padding: 0 130px;
