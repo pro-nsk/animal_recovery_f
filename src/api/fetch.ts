@@ -1,12 +1,12 @@
 import * as isofetch from 'isomorphic-fetch'
-import {StorageKey} from '../util/storage'
+import { StorageKey } from '../util/storage'
 
-export function fetch(input: RequestInfo, init?: RequestInit, withCredentials?: boolean): Promise<Response> {
+export function fetch(input: RequestInfo, init?: RequestInit, credentials = 'include'): Promise<Response> {
 
     init = init || {}
     init = {
         ...init,
-        credentials: withCredentials ? 'include' : 'include',
+        credentials: credentials as any,
         headers: {
             ...init.headers
         }
@@ -39,7 +39,7 @@ export function fetch(input: RequestInfo, init?: RequestInit, withCredentials?: 
 }
 
 export function processError(err?: any): Promise<any> {
-    let resp = err as Response
+    const resp = err as Response
     let parsedError = undefined
     if (typeof (resp.json) == 'function') {
         return resp.json().catch(() => {

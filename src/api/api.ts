@@ -24,7 +24,7 @@ class Api extends BaseApi {
     async counterCreate(): Promise<any> {
         return this.sendRequest('/operations-counter/', {
             method: 'POST',
-            body: JSON.stringify({counter: 22})
+            body: JSON.stringify({ counter: 22 })
         }, true)
     }
 
@@ -41,7 +41,11 @@ class Api extends BaseApi {
     }
 
     async getPhotos(): Promise<any> {
-        return this.sendRequest('https://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=9c2f9a8ed41199c726ef14607079721e&photoset_id=72157712051830726&user_id=185879434@N08&extras=url_l&per_page=10&page=1&format=json&nojsoncallback=1')
+        return this.sendRequest(
+            'https://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=9c2f9a8ed41199c726ef14607079721e&photoset_id=72157712051830726&user_id=185879434@N08&extras=url_l&per_page=10&page=1&format=json&nojsoncallback=1',
+            { method: 'GET' },
+            'omit'
+        )
     }
 
     async postByUrlName(urlName: string): Promise<Post> {
@@ -147,10 +151,10 @@ class Api extends BaseApi {
         }
     }
 
-    private async sendRequest(url: string, options: Options = {method: 'GET'}, withCredentials?: boolean): Promise<any> {
+    private async sendRequest(url: string, options: Options = { method: 'GET' }, credentials?): Promise<any> {
         try {
             const finalUrl = url.indexOf('http') > -1 ? url : configuration.basePath + url
-            const response = await this.fetch(finalUrl, options, withCredentials)
+            const response = await this.fetch(finalUrl, options, credentials)
             const json = await response.json()
             return Promise.resolve(json)
         } catch (error) {
