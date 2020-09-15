@@ -1,10 +1,11 @@
 import * as React from 'react'
 import { useContext, useEffect, useState, Suspense } from 'react'
-import { Paragraphs, SITE_NAME, goToElementId } from '../util/util'
+import { Paragraphs, SITE_NAME, goToElementId, isAuthenticated } from '../util/util'
 import './../css/main.css'
 import './../css/common.css'
 import { TopbarContext } from '../components/contextProvider'
 import { Link } from 'react-router-dom'
+import NewsFeed from '../components/newsFeed'
 
 const UserCarousel = React.lazy(() => import('../components/userCarousel'))
 const PartnersCarousel = React.lazy(() => import('../components/partnersCarousel'))
@@ -130,14 +131,11 @@ const Home = () => {
                         <div className="about-blocks">
                             <div className="accordion">
                                 <div className="accordion-button" onClick={activator}>
-                                    <span>Документы</span>
+                                    <span>Отчётность</span>
                                     <img className="accordion-arrow" src="/images/dropdown-arrow.svg" />
                                 </div>
                                 <div className="accordion-content">
                                     <ul>
-                                        <li><a href="/doc/galbshtadt.pdf">Письмо поддержки от администрации гальбштадского сельсовета</a></li>
-                                        <li><a href="/doc/ident.pdf">Письмо поддержки от центра имплантологии &quot;Ай-Дент&quot;</a></li>
-                                        <li><a href="/doc/kaleidoskop.pdf">Письмо поддержки от МКУ МЦ Калейдоскоп</a></li>
                                         <li><a href="/doc/dejatelnost.pdf">Сообщение о продолжении деятельности</a></li>
                                         <li><a href="/doc/otchot_den.pdf">Отчет об объеме денежных средств...</a></li>
                                         <li><a href="/doc/buh_otchot.pdf">Бухгалтерский отчёт за 2019г</a></li>
@@ -148,11 +146,27 @@ const Home = () => {
                             </div>
                             <div className="accordion">
                                 <div className="accordion-button" onClick={activator}>
+                                    <span>Благодарности</span>
+                                    <img className="accordion-arrow" src="/images/dropdown-arrow.svg" />
+                                </div>
+                                <div className="accordion-content">
+                                    <ul>
+                                        <li><a href="/doc/galbshtadt.pdf">Письмо поддержки от администрации гальбштадского сельсовета</a></li>
+                                        <li><a href="/doc/ident.pdf">Письмо поддержки от центра имплантологии &quot;Ай-Дент&quot;</a></li>
+                                        <li><a href="/doc/kaleidoskop.pdf">Письмо поддержки от МКУ МЦ Калейдоскоп</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="accordion">
+                                <div className="accordion-button" onClick={activator}>
                                     <span>Наши проекты</span>
                                     <img className="accordion-arrow" src="/images/dropdown-arrow.svg" />
                                 </div>
                                 <div className="accordion-content">
                                     <ul>
+                                        <li>Победители конкурса президентских грантов 2020 года.</li>
+                                        <li><a href="https://planeta.ru/campaigns/138745">Успешная реализация на крупных платформах краутфандинга России.</a></li>
+                                        <li><a href="https://adoption.pedigree.ru/">Единственная в Сибири организация участник проекта &quot;Пойдем домой&quot; от международной компании Pedigree.</a></li>
                                         <li>Участие в форуме «Экологичный Новосибирск».</li>
                                         <li>Участие в эко-мероприятиях Новосибирска.</li>
                                         <li>Волонтерская деятельность компаний -партнеров.</li>
@@ -229,6 +243,7 @@ const Home = () => {
                             <p>Наша организация - место для грамотного ухода и восстановительный центр, где для того, чтобы заново научиться доверять человеку и другим животным, пациенты, проводят месяцы. Реабилитацией животных Базы занимаются волонтеры при курировании врачей.</p>
                         </div>
                     </div>
+                    <NewsFeed/>
                 </div>
             </div>
             <div className="partners-p-background" style={{ backgroundImage: 'url(' + getPost(posts[rnd2]) + ')', opacity: posts.length == 0 ? 0 : 1 }}></div>
@@ -248,7 +263,7 @@ const Home = () => {
                         <Suspense fallback="">
                             <FlipCounter />
                         </Suspense>
-                        <p>операции по контролю численности животных</p>
+                        <p>операции по контролю численности животных {isAuthenticated() && <Link to="counter-edit" title="Изменить"><img className="c-edit" src="/images/Edit-01.svg"/></Link>}</p>
                     </div>
                     <div className="operations-p-blocks">
                         <div className="accordion">

@@ -10,30 +10,44 @@ interface Options {
 
 export interface Post {
     _id?: string
-    urlName?: string
-    imageUrl: string
-    text?: string
+    mainImage: string
+    text: string
 }
 
 class Api extends BaseApi {
 
-    async counter(id): Promise<any> {
-        return this.sendRequest('/operations-counter/' + id)
+    async counterGet(): Promise<any> {
+        return this.sendRequest('/operations-counter')
     }
 
-    async counterCreate(): Promise<any> {
-        return this.sendRequest('/operations-counter/', {
+    async counterCreate(counter): Promise<any> {
+        return this.sendRequest('/operations-counter', {
             method: 'POST',
-            body: JSON.stringify({ counter: 22 })
-        }, true)
+            body: JSON.stringify({ counter })
+        })
+    }
+
+    async counterEdit(counter): Promise<any> {
+
+        const options: RequestInit = {
+            method: 'PUT',
+            body: JSON.stringify({ counter })
+        }
+
+        try {
+            const response = await this.fetch(configuration.basePath + '/operations-counter', options)
+            if (response) {
+                return Promise.resolve(true)
+            } else {
+                return Promise.resolve(false)
+            }
+        } catch (e) {
+            return processError(e)
+        }
     }
 
     async home(page: number): Promise<any> {
-        return this.sendRequest('/home/' + page)
-    }
-
-    async menu(): Promise<any> {
-        return this.sendRequest('/menu')
+        return this.sendRequest('/news/' + page)
     }
 
     async post(id: string): Promise<Post> {
@@ -46,10 +60,6 @@ class Api extends BaseApi {
             { method: 'GET' },
             'omit'
         )
-    }
-
-    async postByUrlName(urlName: string): Promise<Post> {
-        return this.sendRequest('/' + urlName)
     }
 
     async create(post: Post): Promise<boolean> {

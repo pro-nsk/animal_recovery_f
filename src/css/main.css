@@ -278,7 +278,7 @@ ul {
 }
 .about-main {
     margin: 1em 0 1em 0;
-    border: black solid 1px;
+    border: gray solid 1px;
     padding: 0 1em 0 1em;
     border-radius: 10px;
     height: fit-content;

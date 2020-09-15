@@ -12,6 +12,11 @@ import Logout from './pages/logout'
 import Mission from './pages/mission'
 import Register from './pages/register'
 import AppProps from './util/appProps'
+import CounterEdit from './pages/counterEdit'
+import CounterCreate from './pages/counterCreate'
+import PostCreate from './pages/postCreate'
+import PostComponent from './components/post'
+import PostEdit from './pages/postEdit'
 
 const App = (props: AppProps) => {
 
@@ -33,9 +38,14 @@ const App = (props: AppProps) => {
                     <div className="page-content">
                         <Router history={props.history}>
                             <Switch>
+                                <Route path="/news/create" component={PostCreate} />
+                                <Route path="/news/:id/edit" component={PostEdit} />
+                                <Route path="/news/:id" component={PostComponent} />
                                 <Route path="/mission" component={Mission} />
                                 <Route path="/register" component={Register} />
                                 <Route path="/login" component={Login} />
+                                <Route path="/counter-edit" component={CounterEdit} />
+                                <Route path="/counter-create" component={CounterCreate} />
                                 <Route path="/logout" component={Logout} />
                                 <Route path="/history" component={History} />
                                 <Route path="/" component={Home} />

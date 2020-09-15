@@ -1,1 +1,1 @@
-REACT_APP_ENDPOINT=pro.nsk.ru/api
+REACT_APP_ENDPOINT=animalrecovery54.ru/baza-api

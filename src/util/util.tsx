@@ -1,4 +1,6 @@
-import {StorageKey} from './storage'
+import { useEffect, useState } from 'react'
+import { api } from '../api/api'
+import { StorageKey } from './storage'
 
 export function isAuthenticated() {
     if (localStorage.getItem(StorageKey.Authenticated) === 'true') {
@@ -40,4 +42,23 @@ export function goToElementId(elementId) {
     if (targetElement) {
         targetElement.scrollIntoView({behavior: 'smooth', block: 'start'})
     }
+}
+
+export async function fetchOperationsCount() {
+    try {
+        const resp = await api.counterGet()
+        return resp.counter
+    } catch (error) {
+        //
+    }
+}
+
+export function fetchOperationsCountHook() {
+    const [counterOP, setCounterOP] = useState(0)
+
+    useEffect(() => {
+        fetchOperationsCount().then(counter => setCounterOP(counter))
+    }, [])
+
+    return counterOP
 }

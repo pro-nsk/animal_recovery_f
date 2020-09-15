@@ -22,7 +22,7 @@ const Footer = () => {
                     <a className="vk" href="https://vk.com/animal_recovery54" /><span className="vk-before" />
                 </p>
                 <p className="fs12"><a href="https://pro.nsk.ru">разработка сайта</a></p>
-                <p className="fs12">{auth ? <Link to="logout">выход</Link> : <Link to="login">вход</Link>}</p>
+                <p className="fs12">{auth ? <Link to="/logout">выход</Link> : <Link to="/login">вход</Link>}</p>
             </span>
         </div>
     )

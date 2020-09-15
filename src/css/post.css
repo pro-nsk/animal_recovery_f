@@ -1,0 +1,39 @@
+.post-list {
+    padding-top: 100px;
+}
+.post-list img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto 20px;
+}
+.post-list > div {
+    margin: 3% 0 30px 0;
+    overflow: hidden;
+}
+.text-l {
+    margin: 0 auto 10px;
+}
+.text-l p,
+.text-l ul {
+    margin: 20px auto;
+}
+.text-l ul {
+    padding-left: 0;
+    list-style: none;
+}
+.control {
+    margin: 0 auto;
+}
+.delete, .edit {
+    float: right;
+}
+.edit {
+    margin-right: 20px;
+}
+.delete {
+    cursor: pointer;
+}
+.delete:hover {
+    text-decoration: underline;
+    color: var(--blue-light);
+}

@@ -3,37 +3,25 @@ import '@pqina/flip/dist/flip.min.css'
 import * as React from 'react'
 import { useEffect } from 'react'
 import '../css/flipClock.css'
-import { api } from '../api/api'
-
-// const OPERATIONS_COUNT = 1521
+import { fetchOperationsCount } from '../util/util'
 
 const FlipCounter = () => {
 
-    let counterOP
+    let counterOPP
     let tickInstance
     const tickRef = React.createRef<HTMLDivElement>()
 
-    const getOperationsCount = async () => {
-        try {
-            const resp = await api.counter('5f4f058d330e7c20807391df')
-            counterOP = resp.counter
-            // return await api.counterCreate()
-        } catch (error) {
-            //
-        }
-    }
-
     useEffect(() => {
-        getOperationsCount()
-
+        fetchOperationsCount().then(counter => counterOPP = counter)
         tickInstance = Tick.DOM.create(tickRef.current)
 
         const counter = document.getElementById('operations-counter')
 
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting && entries[0].target === counter) {
+                // console.log(counterS)
                 setTimeout(function () {
-                    tickInstance.value = counterOP
+                    tickInstance.value = counterOPP
                 }, 100)
             } else {
                 //
