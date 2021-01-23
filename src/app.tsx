@@ -15,6 +15,7 @@ import AppProps from './util/appProps'
 import CounterEdit from './pages/counterEdit'
 import CounterCreate from './pages/counterCreate'
 import PostCreate from './pages/postCreate'
+import RandomHashTag from './pages/RandomHashTag'
 import PostComponent from './components/post'
 import PostEdit from './pages/postEdit'
 
@@ -39,6 +40,7 @@ const App = (props: AppProps) => {
                         <Router history={props.history}>
                             <Switch>
                                 <Route path="/news/create" component={PostCreate} />
+                                <Route path="/random-hashtag" component={RandomHashTag} />
                                 <Route path="/news/:id/edit" component={PostEdit} />
                                 <Route path="/news/:id" component={PostComponent} />
                                 <Route path="/mission" component={Mission} />
