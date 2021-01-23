@@ -86,7 +86,7 @@ a:hover {
     height: 100vh;
 }
 .form input, .form textarea {
-    width: 300px;
+    width: 900px;
     height: 50px;
     border: none;
     border-radius: 5px;
@@ -99,7 +99,7 @@ a:hover {
     outline-width: 0;
 }
 .form textarea {
-    height: 200px;
+    height: 500px;
     scrollbar-color: grey lightgray;
     scrollbar-width: thin;
 }
@@ -132,6 +132,12 @@ a:hover {
 /* .p-start {
     font-size: 36px;    
 } */
+
+.c-edit {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
 
 @media screen and (max-width: 500px) {
     .a-blue {

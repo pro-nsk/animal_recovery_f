@@ -42,6 +42,7 @@ html::-webkit-scrollbar-thumb {
 
 body {
     margin: 0;
+    padding: 0;
 }
 
 html, body {

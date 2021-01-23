@@ -4,7 +4,7 @@ import { api, Post } from '../api/api'
 import '../css/news.css'
 import AppProps from '../util/appProps'
 import { Link } from 'react-router-dom'
-import { stripHtml } from '../util/util'
+import { isAuthenticated, stripHtml } from '../util/util'
 
 const NewsFeed = (props: AppProps) => {
 
@@ -31,7 +31,7 @@ const NewsFeed = (props: AppProps) => {
 
     return (
         <div className="news">
-            <p className="fw500">Новости</p>
+            <p className="fw500">Новости {isAuthenticated() && <Link to="news/create" title="Добавить новость"><img className="c-edit" src="/images/add_new.svg"/></Link>}</p>
             <div className="post-grid">
                 {error && <div className="error">{error}</div>}
                 {renderFeed()}

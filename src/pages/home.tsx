@@ -7,8 +7,8 @@ import { TopbarContext } from '../components/contextProvider'
 import { Link } from 'react-router-dom'
 import NewsFeed from '../components/newsFeed'
 
-const UserCarousel = React.lazy(() => import('../components/userCarousel'))
 const PartnersCarousel = React.lazy(() => import('../components/partnersCarousel'))
+const UserCarousel = React.lazy(() => import('../components/userCarousel'))
 const FlipCounter = React.lazy(() => import('../components/flipCounter'))
 
 const Home = () => {

@@ -26,7 +26,7 @@ const PostCreate = (props: AppProps) => {
     return (
         <div className="form">
             {error && <div className="error">{error}</div>}
-            <input placeholder="url изображения новости" onChange={handleMainImageChange} onKeyPress={e => isEnter(e) && create()} />
+            <input placeholder="url главного изображения новости" onChange={handleMainImageChange} onKeyPress={e => isEnter(e) && create()} />
             <textarea placeholder="html код новости" onChange={handleTextChange} />
             <div className="pro-buttons">
                 <div className="form-b-1" onClick={props.history.goBack}>Отмена</div>

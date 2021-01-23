@@ -36,7 +36,7 @@ const TopBar = (props: AppProps) => {
     return (
         <div id="top-bar" className="top-bar">
             <div id="menu">
-                <span id="menu-logo" ><img onClick={scrollToHome} src="/images/logo.jpg" /></span>
+                <span id="menu-logo" ><img onClick={scrollToHome} src="/images/logo_blue.png" /></span>
                 <span id="menu-title" >
                     <input id="menu-toggle" type="checkbox" />
                     <label className="menu-btn" htmlFor="menu-toggle">

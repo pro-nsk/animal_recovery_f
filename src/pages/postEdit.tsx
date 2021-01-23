@@ -41,7 +41,7 @@ const PostEdit = (props: AppProps) => {
     return (
         <div className="form">
             {error && <div className="error">{error}</div>}
-            <input value={mainImage} placeholder="url изображения новости" onChange={handleMainImageChange} onKeyPress={e => isEnter(e) && edit()} />
+            <input value={mainImage} placeholder="url главного изображения новости" onChange={handleMainImageChange} onKeyPress={e => isEnter(e) && edit()} />
             <textarea value={text} placeholder="html код новости" onChange={handleTextChange} />
             <div className="pro-buttons">
                 <div className="form-b-1" onClick={props.history.goBack}>Отмена</div>
