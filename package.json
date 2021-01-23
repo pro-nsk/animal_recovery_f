@@ -30,7 +30,7 @@
     "eject": "./node_modules/.bin/react-scripts-ts eject",
     "arch": "del baza_f.zip && 7z a -tzip -mx5 -r0 ./baza_f.zip ./build/*",
     "dev-start": "copy .\\.env.dev .\\.env && yarn start",
-    "baza-build": "copy .\\.env.pro .\\.env && yarn build"
+    "baza-build": "copy .\\.env.baza .\\.env && yarn build"
   },
   "devDependencies": {
     "react-scripts-ts": "2.12.0"
