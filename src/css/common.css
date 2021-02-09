@@ -24,7 +24,7 @@ a:hover {
 .a-button {
     border-radius: 10px;
     border: none;
-    background-image: linear-gradient(90deg, var(--blue-light), var(--red-light));
+    background-image: linear-gradient(100deg, var(--new-logo), var(--new-logo-light));
     color: white;
     display: block;
     margin: 20px auto;

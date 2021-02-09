@@ -43,15 +43,23 @@
     justify-content: space-between;
     width: 450px;
 }
-.paragraphs > span {
+.paragraphs > span,
+.news-bar > div {
     cursor: pointer;
     border-radius: 6px;
     padding: 5px;
 }
 .paragraphs > span:hover,
-.p-h-span {
-    background-image: linear-gradient(90deg, var(--blue-light), var(--red-light));
-    color: white;
+.p-h-span,
+.news-bar > div:hover {
+    background-image: linear-gradient(90deg, var(--new-logo-light), var(--new-logo));
+    box-shadow: 0 0 1em #00a0e02a;
+    
+    background-clip: text;
+    color: transparent;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .loading {
