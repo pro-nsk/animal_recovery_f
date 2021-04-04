@@ -141,6 +141,7 @@ const Home = () => {
                                         <li><a href="/doc/buh_otchot.pdf">Бухгалтерский отчёт за 2019г</a></li>
                                         <li><a href="/doc/svidetelstvo.pdf">Свидетельство о государственной регистрации</a></li>
                                         <li><a href="/doc/ustav.pdf">Устав по оказанию помощи животным</a></li>
+                                        <li><a href="/doc/buh_balans.pdf">Бухгалтерский баланс на 31 декабря 2020</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -243,7 +244,7 @@ const Home = () => {
                             <p>Наша организация - место для грамотного ухода и восстановительный центр, где для того, чтобы заново научиться доверять человеку и другим животным, пациенты, проводят месяцы. Реабилитацией животных Базы занимаются волонтеры при курировании врачей.</p>
                         </div>
                     </div>
-                    <NewsFeed/>
+                    <NewsFeed />
                 </div>
             </div>
             <div className="partners-p-background" style={{ backgroundImage: 'url(' + getPost(posts[rnd2]) + ')', opacity: posts.length == 0 ? 0 : 1 }}></div>
@@ -263,7 +264,7 @@ const Home = () => {
                         <Suspense fallback="">
                             <FlipCounter />
                         </Suspense>
-                        <p>операции по контролю численности животных {isAuthenticated() && <Link to="counter-edit" title="Изменить"><img className="c-edit" src="/images/Edit-01.svg"/></Link>}</p>
+                        <p>операции по контролю численности животных {isAuthenticated() && <Link to="counter-edit" title="Изменить"><img className="c-edit" src="/images/Edit-01.svg" /></Link>}</p>
                     </div>
                     <div className="operations-p-blocks">
                         <div className="accordion">
@@ -365,7 +366,16 @@ const Home = () => {
             <div id="menu-requisites-p-i" className="menu-requisites-p">
                 <div className="menu-requisites-list">
                     <p className="title">Наши реквизиты</p>
-                    <p>НРОО по оказанию помощи животным &quot;База реабилитации животных&quot; ИНН 5408023500</p>
+                    <div className="requisites-bank-list">
+                        <p>Организация: <span className="fw500">НРОО &quot;БРЖ&quot;</span></p>
+                        <p>ИНН: <span className="fw500">5408023500</span></p>
+                        <p>КПП: <span className="fw500">540801001</span></p>
+                        <p>ОГРН/ОГРНИП: <span className="fw500">1195476032432</span></p>
+                        <p>Расчётный счёт: <span className="fw500">40703.810.3.44050003986</span></p>
+                        <p>БИК: <span className="fw500">045004641</span></p>
+                        <p>Банк: <span className="fw500">Сибирский банк ПАО Сбербанк</span></p>
+                        <p>Корр. счёт: <span className="fw500">30101.810.5.00000000641</span></p>
+                    </div>
                     <p>Реквизиты для финансовой помощи:</p>
                     <p>1. Сбербанк <span className="fw500">4817 7601 2741 6992</span></p>
                     <p>2. Альфа-Банк <span className="fw500">5486 7320 5501 7396</span></p>

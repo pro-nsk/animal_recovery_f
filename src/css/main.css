@@ -314,6 +314,10 @@ ul {
     display: block;
 }
 
+.requisites-bank-list {
+    margin-bottom: 7%;
+}
+
 @media screen and (max-width: 500px) {
     #menu-title {
         margin: 0;
